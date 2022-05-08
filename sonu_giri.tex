@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{changepage}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -76,6 +77,21 @@
     \end{tabular*}\vspace{-5pt}
 }
 
+%   MACROS  %
+\newcommand{\sectionStart}{
+  \begin{itemize}[label={},leftmargin=0in]
+}
+\newcommand{\sectionEnd}{
+  \end{itemize}
+}
+
+\newcommand{\summaryText}[1]{
+  \item
+  \begin{addmargin}
+    {#1}
+  \end{addmargin}
+}
+
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
@@ -97,13 +113,19 @@
   \href{https://www.linkedin.com/in/sonugiri/}{https://www.linkedin.com/in/sonugiri/} & Mobile : +91 888-490-6153 \\
 \end{tabular*}
 
+%   SUMMARY   %
+\section{Summary}
+\sectionStart
+  \summaryText
+  {Experienced Software Lead Engineer currently working at PayPal India in Network Infra team and leading a team of 7 engineers.}
+\sectionEnd
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {Indian Institute of Technology (IIT)}{Ropar, India}
-      {Bachelor of Technology in Computer Science and Engineering;  CGPA: 9.37/10.0}{Aug. 2009 -- May. 2013}
+      {Bachelor of Technology in Computer Science and Engineering;  CGPA: 9.37/10.0}{Aug 2009 -- May 2013}
     \resumeSubheading
       {Army School}{Kota, India}
       {Senior Secondary; 94.40/100}{2008}
@@ -116,12 +138,19 @@
 
     \resumeSubheading
       {PayPal}{Bangalore, India}
-      {MTS, T25}{Sept 2020 - Present}
+      {MTS2 - Software Engineer, T26}{April 2022 - Present}
+      \resumeItemListStart
+        \resumeItem{Path Tracer}
+          {Built Path Tracing solution to help NetOps with debugging network flows and connectivity related issue.}
+    \resumeItemListEnd
+    \resumeSubheading
+      {PayPal}{Bangalore, India}
+      {MTS1 - Software Engineer, T25}{Sept 2020 - March 2022}
       \resumeItemListStart
         \resumeItem{Network Health and Endpoint Monitoring Solution (Camelot)}
-          {I lead the design, code and deployment of Camelot. Camelot is designed to provide Experience Centric Network Monitoring by mimicking application behavior in agents. It’s capable of monitoring network connectivity and latency matrix for PayPal devices as well as external endpoints. It can automatically detect if there is a connectivity or latency issue in network and notify Network Operations team. Tech used GoLang, Redis, Kubernetes, Docker, InfluxDb, Grafana, LoadBalancer, mTLS.}
+          {I lead the design, code and deployment of Camelot. Camelot is designed to provide Experience Centric Network Monitoring by mimicking application behavior in agents. It’s capable of monitoring network connectivity and latency matrix across PayPal devices. It can monitor internal as well as external endpoints for connectivity and latency issues. It sends realtime notification to Network Operations team for any issues detected. Tech used GoLang, Redis, Kubernetes, Docker, InfluxDb, Grafana, LoadBalancer, mTLS.}
         \resumeItem{Continuous Development \& Continuous Deployment and Auto CodeGen Infrastructure}
-          {This project helped the team migrate from monolithic application framework to true Micro Services architecture with API Gateway and auto generated code. With this the deployment cycles have reduced from days to minutes and the whole team is benefiting from it. This involved Dockizing all CNS services, setting up Argo Continuous deployment pipeline and sealed secret in Kubernetes cluster. Setting up infra like Nginx, API gateway, load balancer and services on Kubernetes cluster. The scope of work also involved automating Jenkins’s pipeline to automate deployment and code generation for UI. Tech used: Kubernetes, Argo, Sealed Secret, Jinja Template, Javascript, Jenkins, MySQL. }
+          {This project helped the team migrate from monolithic application framework to true Micro Services architecture with API Gateway and auto generated code. With this the deployment cycles have reduced from days to minutes and the whole team is benefiting from it. This involved Dockizing all CNS services, setting up Argo Continuous deployment pipeline and sealed secret in Kubernetes cluster. Setting up infra like Nginx, API gateway, load balancer and services on Kubernetes cluster. The scope of work also involved automating Jenkins pipeline to automate deployment and code generation for UI. Tech used: Kubernetes, Argo, Sealed Secret, Jinja Template, Javascript, Jenkins, MySQL. }
         \resumeItem{Edge Traffic Engineering Deployment and UI}
           {The goal of this project was to build a RESTful service and UI to manage edge components. Earlier Edge team was using python based CLI to manage edge components like CDN, PoP, Borders. I developed UI for the edge traffic management service and contributed to packaging and deployment of the software. Helped onboard this software to Kubernetes cluster. Tech used: Javascript}
         \resumeItem{Firewall Ticket Automation }
@@ -163,7 +192,7 @@
       \resumeItemListEnd
 
     \resumeSubheading
-      {Aston University}{birmingham , UK}
+      {Aston University}{Birmingham , UK}
       {Research Intern and B.Tech Project}{May 2012 - April 2013}
       \resumeItemListStart
         \resumeItem{Artificial Landscape Generator}
@@ -178,9 +207,9 @@
 \section{Programming Skills}
   \resumeSubHeadingListStart
     \resumeSubItem{Languages}
-    {C++, C, Python, GoLang, SQL}
+    {C++, Python, GoLang}
     \resumeSubItem{Technologies}
-      {Kubernetes, Docker, Terraform, Jenkins, AWS, GCP, Azure, Redis, InfluxDb, Grafana}
+      {Kubernetes, Docker, Terraform, Jenkins, AWS, GCP, Azure, Redis, SQL, InfluxDb, Grafana}
   \resumeSubHeadingListEnd
 
 %-------------------------------------------
